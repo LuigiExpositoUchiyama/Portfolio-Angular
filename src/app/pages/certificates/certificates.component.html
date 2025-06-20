@@ -1,0 +1,47 @@
+<section>
+  <div class="titulo">
+    <h1>Certificados</h1>
+  </div>
+
+  <div class="certificates">
+    <!-- FIAP -->
+    <div>
+      <div class="certificate-title">
+        <h1>Faculdade FIAP</h1>
+      </div>
+
+      <div class="slider-controls">
+        <button class="slider-button" (click)="prevSlideFIAP()">❮</button>
+
+        <div class="slider-content fiap-transition" [ngClass]="fiapAnimationClass" (touchstart)="onTouchStart($event)" (touchend)="onTouchEndFIAP($event)">
+          <a [href]="certificatesDataFIAP[currentIndexFIAP].link" target="_blank" rel="noopener noreferrer">
+            <img [src]="certificatesDataFIAP[currentIndexFIAP].img" [alt]="certificatesDataFIAP[currentIndexFIAP].title" />
+            <p>{{ certificatesDataFIAP[currentIndexFIAP].title }}</p>
+          </a>
+        </div>
+
+        <button class="slider-button" (click)="animateNextSlideFIAP()">❯</button>
+      </div>
+    </div>
+
+    <!-- Origamid -->
+    <div>
+      <div class="certificate-title">
+        <h1 class="separator">Curso Origamid</h1>
+      </div>
+
+      <div class="slider-controls">
+        <button class="slider-button" (click)="prevSlideOrigamid()">❮</button>
+
+        <div class="slider-content origamid-transition" [ngClass]="origamidAnimationClass" (touchstart)="onTouchStart($event)" (touchend)="onTouchEndOrigamid($event)">
+          <a [href]="certificatesDataOrigamid[currentIndexOrigamid].link" target="_blank" rel="noopener noreferrer">
+            <img [src]="certificatesDataOrigamid[currentIndexOrigamid].img" [alt]="certificatesDataOrigamid[currentIndexOrigamid].title" />
+            <p>{{ certificatesDataOrigamid[currentIndexOrigamid].title }}</p>
+          </a>
+        </div>
+
+        <button class="slider-button" (click)="animateNextSlideOrigamid()">❯</button>
+      </div>
+    </div>
+  </div>
+</section>

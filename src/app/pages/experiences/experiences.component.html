@@ -1,0 +1,9 @@
+<section>
+  <div class="titulo">
+    <h1>Experiências</h1>
+  </div>
+
+  <div>
+    <app-experience-item *ngFor="let exp of experiencesData; index as i" [imgSrc]="exp.imgSrc" [altText]="exp.altText" [role]="exp.role" [period]="exp.period" [details]="exp.details"></app-experience-item>
+  </div>
+</section>

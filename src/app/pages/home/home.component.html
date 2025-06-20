@@ -1,0 +1,67 @@
+<!-- src/app/pages/home/home.component.html -->
+<section>
+  <div class="intro-container">
+    <div class="intro-text">
+      <app-typing-effect></app-typing-effect>
+      <p>
+        Sou formado em Análise e Desenvolvimento de Sistemas. Meu foco é criar soluções tecnológicas eficientes e inovadoras para ajudar empresas e pessoas a alcançarem seus objetivos.
+      </p>
+
+      <div class="social-links">
+        <a [href]="resumeUrl" download>
+          <app-button>
+            <span class="download-btn">
+              <fa-icon [icon]="downloadIcon"></fa-icon>
+              <span>Meu Currículo</span>
+            </span>
+          </app-button>
+        </a>
+
+        <div class="social-cards">
+          <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Visite meu perfil no ' + link.alt" [ngClass]="['social-link', link.slug]">
+            <fa-icon [icon]="link.icon" class="social-icon"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <img src="/img/perfil.svg" alt="Perfil" class="profile-image" />
+    </div>
+  </div>
+
+  <app-detalhes></app-detalhes>
+
+  <div class="services-background">
+    <div class="services-principal">
+      <div class="services-title-area">
+        <h1>Meus Serviços</h1>
+        <a routerLink="/portfolio">
+          <app-button>
+            <span class="btn-projects">
+              <span>Ver Projetos</span>
+              <fa-icon [icon]="['fas','arrow-right']"></fa-icon>
+            </span>
+          </app-button>
+        </a>
+      </div>
+      <div class="services-container">
+        <div class="service-card" *ngFor="let s of services">
+          <img [src]="s.iconPath" class="service-icon" [alt]="s.title" />
+          <h1>{{ s.title }}</h1>
+          <p class="service-description">{{ s.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-background">
+    <h1>Minhas Conquistas</h1>
+    <div class="stats-container">
+      <p *ngFor="let stat of stats">
+        <span class="stats-number">{{ stat.value }}</span>
+        <span>{{ stat.label }}</span>
+      </p>
+    </div>
+  </div>
+</section>

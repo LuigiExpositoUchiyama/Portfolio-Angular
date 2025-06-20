@@ -1,0 +1,35 @@
+<section>
+  <div class="titulo">
+    <h1>Formações</h1>
+  </div>
+
+  <div>
+    <section *ngFor="let edu of educationData; let i = index" class="education">
+      <div class="detalhes" (click)="toggleDetails(i)" role="button">
+        <img [src]="edu.imgSrc" [alt]="edu.altText" />
+        <div>
+          <p>{{ edu.title }}</p>
+        </div>
+
+        <fa-icon *ngIf="openIndexes.includes(i); else closed" [icon]="faChevronUp" class="icon"></fa-icon>
+        <ng-template #closed>
+          <fa-icon [icon]="faChevronDown" class="icon"></fa-icon>
+        </ng-template>
+      </div>
+
+      <div class="descricao" [class.show]="openIndexes.includes(i)">
+        <p>{{ edu.description }}</p>
+
+        <div>
+          <h3 class="languagesTitle">{{ edu.languagesTitle }}</h3>
+          <div class="languages">
+            <div class="language" *ngFor="let lang of edu.languages">
+              <fa-icon [icon]="lang.icon" [ngStyle]="{ color: lang.color }" class="languageIcon"></fa-icon>
+              <span>{{ lang.name }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

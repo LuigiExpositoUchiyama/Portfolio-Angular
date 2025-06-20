@@ -1,0 +1,18 @@
+<section class="career">
+  <div class="curriculum" *ngFor="let section of careerSections">
+    <h1>{{ section.title }}</h1>
+    <p>{{ section.description }}</p>
+
+    <div class="details">
+      <div class="icons-curriculum">
+        <img *ngFor="let icon of section.icons" [src]="icon" [alt]="section.title" class="icons-curriculum2" />
+      </div>
+
+      <a [routerLink]="section.route">
+        <app-button>
+          Saiba Mais<span class="outra-font">!</span>
+        </app-button>
+      </a>
+    </div>
+  </div>
+</section>

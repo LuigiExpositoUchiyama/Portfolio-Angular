@@ -1,0 +1,49 @@
+<section>
+  <div class="titulo">
+    <h1>Portfólio</h1>
+  </div>
+
+  <div class="section-title">
+    <h2>Projetos de Cliente</h2>
+  </div>
+  <div class="portfolio-container">
+    <div *ngFor="let project of clientProjects" #portfolioItem class="portfolio-item" (click)="openModal(project)">
+      <div class="image-container">
+        <img [src]="project.imageSource" [alt]="project.title" class="project-image" />
+        <div class="overlay">
+          <div class="text-container">
+            <h2 class="project-title">{{ project.title }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <span class="description">{{ project.description }}</span>
+        <button class="view-more-button">Ver mais</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <h2>Projetos de Estudo</h2>
+  </div>
+  <div class="portfolio-container">
+    <div *ngFor="let project of studyProjects" #portfolioItem class="portfolio-item" (click)="openModal(project)">
+      <div class="image-container">
+        <img [src]="project.imageSource" [alt]="project.title" class="project-image" />
+        <div class="overlay">
+          <div class="text-container">
+            <h2 class="project-title">{{ project.title }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <span class="description">{{ project.description }}</span>
+        <button class="view-more-button">Ver mais</button>
+      </div>
+    </div>
+  </div>
+
+  <app-portfolio-modal *ngIf="isModalOpen && selectedProject" [isOpen]="isModalOpen" [title]="selectedProject.title" [description]="
+      selectedProject.detailedDescription || selectedProject.description
+    " [videoSource]="selectedProject.videoSource" [projectLink]="selectedProject.projectLink" [repoLink]="selectedProject.repoLink" (close)="closeModal()"></app-portfolio-modal>
+</section>

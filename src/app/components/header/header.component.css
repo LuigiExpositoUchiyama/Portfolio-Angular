@@ -1,0 +1,157 @@
+/* header.component.css */
+
+.bg-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 30px;
+  flex-wrap: wrap;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.header-list {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-7);
+  font-family: 'Font4';
+}
+
+.header-list li + li {
+  margin-left: 30px;
+}
+
+.header-list li:hover {
+  color: var(--color-4);
+}
+
+.active {
+  color: var(--color-4);
+}
+
+/* Responsivo: tablets / mobile grandes (até 768px) */
+@media (max-width: 768px) {
+  .bg-header .button {
+    display: none;
+  }
+
+  .header-list li + li {
+    margin-left: 60px;
+  }
+}
+
+/* Responsivo: celulares (até 480px) */
+@media (max-width: 480px) {
+  .header-list {
+    display: block;
+  }
+
+  .header-list li + li {
+    margin: 15px 0;
+  }
+}
+
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: flex;
+  text-align: center;
+}
+
+.text-menu {
+  margin-right: 10px;
+  color: var(--color-4);
+}
+
+.menu-hamburger {
+  display: flex;
+  padding: 0.2rem 0;
+  border: none;
+  background: none;
+}
+
+.menu-hamburger-closed {
+  margin-top: 2px;
+  width: 20px;
+  height: 2px;
+  background: var(--color-4);
+}
+
+.menu-hamburger-closed::before,
+.menu-hamburger-closed::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-4);
+  position: relative;
+  transition: 0.3s;
+}
+
+.menu-hamburger-closed::before {
+  margin-top: 7px;
+}
+
+.menu-hamburger-closed::after {
+  margin-top: 5px;
+}
+
+.menu-hamburger-open {
+  border-top: none;
+  background: none;
+}
+
+.menu-hamburger-open::before {
+  transform: rotate(135deg);
+}
+
+.menu-hamburger-open::after {
+  transform: rotate(-135deg);
+  top: -7px;
+}
+
+/* Responsivo: tablets / celulares */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu-closed {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 100%;
+    height: 0;
+    background: var(--color-1);
+    visibility: hidden;
+    overflow-y: hidden;
+    transition: 0.6s;
+    z-index: 1;
+  }
+
+  .menu-open {
+    height: 80px;
+    background: var(--color-1);
+    visibility: visible;
+    overflow-y: hidden;
+  }
+}
+
+/* Ajuste adicional para telas menores */
+@media (max-width: 480px) {
+  .menu-closed {
+    top: 100px;
+  }
+
+  .menu-open {
+    height: 120px;
+  }
+}

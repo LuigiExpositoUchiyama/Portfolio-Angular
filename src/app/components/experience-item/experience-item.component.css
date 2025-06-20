@@ -1,0 +1,99 @@
+/* Container do item */
+.experience {
+  color: var(--color-7);
+  border-radius: 20px;
+  border: 1px solid var(--color-4);
+  padding: 25px;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: max-height 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Espaçamento vertical entre itens */
+.experience + .experience {
+  margin-top: 30px;
+}
+
+/* Header clicável (imagem + texto + ícone) */
+.detalhes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Tamanho dos textos */
+.detalhes p:nth-child(1) {
+  font-size: 1.125rem;
+}
+.detalhes p:nth-child(2) {
+  font-size: 0.875rem;
+}
+
+/* Imagem do item */
+.detalhes img {
+  max-width: 50px;
+  border-radius: 10px;
+}
+
+/* Ícone de abrir/fechar */
+.icon {
+  width: 20px;
+  height: 30px;
+  color: var(--color-5);
+  border-radius: 5px;
+}
+
+/* Descrição oculta por padrão */
+.descricao {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+/* Quando aberto, revela o texto */
+.descricao.show {
+  opacity: 1;
+  max-height: 1000px;
+}
+
+/* Parágrafos dentro da descrição */
+.descricao p {
+  margin-top: 30px;
+  color: var(--color-2);
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .experience {
+    max-width: 500px;
+  }
+  .detalhes p:nth-child(1) {
+    font-size: 1.0625rem;
+  }
+  .detalhes p:nth-child(2) {
+    font-size: 0.8125rem;
+  }
+  .detalhes img {
+    max-width: 45px;
+  }
+}
+
+/* Responsivo para celulares pequenos */
+@media (max-width: 550px) {
+  .experience {
+    max-width: 400px;
+  }
+  .detalhes p {
+    max-width: 220px;
+  }
+  .detalhes p:nth-child(1) {
+    font-size: 1rem;
+  }
+  .experience + .experience {
+    margin-top: 15px;
+  }
+}

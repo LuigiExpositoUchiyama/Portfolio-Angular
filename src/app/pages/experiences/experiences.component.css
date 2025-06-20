@@ -1,0 +1,19 @@
+/* Centraliza o título e adiciona espaçamento abaixo */
+.titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Container que agrupa os itens de experiência */
+:host section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Ajustes adicionais, se desejar, para responsividade */
+@media (max-width: 768px) {
+  :host section > div {
+    gap: 1.5rem;
+  }
+}

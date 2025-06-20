@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+  font-family: 'Font1'; 
+  src: url('./assets/fonts/TropiLand-L3MPg.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Font2'; 
+  src: url('./assets/fonts/minagi-bristone.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Font3'; 
+  src: url('./assets/fonts/Poppins-Bold.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Font4'; 
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype'); 
+}
+
+:root {
+  --color-1: #212121;
+  --color-2: #d3d3d3;
+  --color-3: linear-gradient(to bottom right, #40C9FF, #E81CFF);
+  --color-4: #E81CFF;
+  --color-5: #40C9FF;
+  --color-6: #1d1d1d;
+  --color-7: #ffffff;
+}
+
+body {
+  background: var(--color-1);
+  overflow-x: hidden;
+  font-family: 'Font4', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #424242;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.poppins-bold {
+  font-family: 'Font3';
+}
+
+.titulo h1 {
+  font-family: 'Font3';
+  font-size: 2rem; 
+  color: var(--color-5);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .titulo h1 {
+    font-size: 2rem;
+  }
+
+  .icons {
+    max-width: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo h1 {
+    font-size: 1.875rem;
+  }
+
+  .icons {
+    max-width: 8rem;
+    max-height: 8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .icons {
+    max-width: 7rem;
+    max-height: 7rem;
+  }
+}
+

@@ -1,0 +1,23 @@
+<section class="experience">
+  <div class="detalhes" (click)="toggleDetails()">
+    <img [src]="imgSrc" [alt]="altText" />
+
+    <div>
+      <p>{{ role }}</p>
+      <p>{{ period }}</p>
+    </div>
+
+    <fa-icon *ngIf="isOpen; else closedIcon" [icon]="faChevronUp" class="icon"></fa-icon>
+
+    <ng-template #closedIcon>
+      <fa-icon [icon]="faChevronDown" class="icon"></fa-icon>
+    </ng-template>
+  </div>
+
+  <div [ngClass]="{ descricao: true, show: isOpen }">
+    <p *ngFor="let detail of details; let i = index">
+      <span class="cor2">{{ detail.title }}:</span>
+      {{ detail.description }}
+    </p>
+  </div>
+</section>

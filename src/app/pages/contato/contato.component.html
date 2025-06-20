@@ -1,0 +1,8 @@
+<!-- src/app/contato/contato.component.html -->
+<section class="profile-social">
+  <div class="social-links">
+    <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank" rel="noopener" [attr.aria-label]="'Visite meu perfil no ' + link.alt" [ngClass]="['social-link', link.slug]">
+      <fa-icon [icon]="link.icon" class="social-icon"></fa-icon>
+    </a>
+  </div>
+</section>

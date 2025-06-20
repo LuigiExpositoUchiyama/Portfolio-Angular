@@ -1,0 +1,37 @@
+<!-- src/app/components/portfolio-modal/portfolio-modal.component.html -->
+<div class="modal-overlay" *ngIf="isOpen">
+  <div class="modal-content">
+    <button class="close-button" (click)="onClose()">&times;</button>
+
+    <div class="video-container">
+      <video [src]="videoSource" class="video" autoplay loop muted controls></video>
+    </div>
+
+    <div class="text-container">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+
+      <div class="buttons-container">
+        <!-- Botão do projeto com ícone de globo -->
+        <a [href]="projectLink" target="_blank" rel="noopener noreferrer" aria-label="Visitar Projeto">
+          <app-button>
+            <span class="icons">
+              <fa-icon [icon]="websiteIcon"></fa-icon>
+              <span>Visitar Projeto</span>
+            </span>
+          </app-button>
+        </a>
+
+        <!-- Botão do repositório (se existir) -->
+        <a *ngIf="repoLink" [href]="repoLink" target="_blank" rel="noopener noreferrer" aria-label="Ver Repositório">
+          <app-button>
+            <span class="icons">
+              <fa-icon [icon]="['fab','github']"></fa-icon>
+              <span>Ver Repositório</span>
+            </span>
+          </app-button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

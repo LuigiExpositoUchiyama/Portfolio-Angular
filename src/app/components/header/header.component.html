@@ -1,0 +1,42 @@
+<!-- header.component.html -->
+
+<header class="container bg-header">
+  <a routerLink="/" aria-label="Logo Luigi" class="logo-link">
+    <img src="/logo.svg" alt="Logo Luigi" />
+  </a>
+
+  <div class="hamburger" (click)="toggleMenu()">
+    <div class="menu-mobile">
+      <div class="text-menu">
+        <p>Menu</p>
+      </div>
+      <div class="menu-hamburger">
+        <div class="menu-hamburger-closed" [class.menu-hamburger-open]="showMenu"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="menu-closed" [class.menu-open]="showMenu">
+    <ul class="header-list" role="menu">
+      <li class="menu-item">
+        <a routerLink="/" (click)="closeMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          Sobre mim
+        </a>
+      </li>
+      <li class="menu-item">
+        <a routerLink="/portfolio" (click)="closeMenu()" routerLinkActive="active">
+          Portfólio
+        </a>
+      </li>
+      <li class="menu-item">
+        <a routerLink="/contato" (click)="closeMenu()" routerLinkActive="active">
+          Contato
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <a routerLink="/contato" class="button">
+    <app-button>Me Contrate!</app-button>
+  </a>
+</header>
