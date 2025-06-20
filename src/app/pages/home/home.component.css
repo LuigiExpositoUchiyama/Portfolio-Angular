@@ -1,6 +1,3 @@
-/* src/app/pages/home/home.component.css */
-
-/* ========== Intro ========== */
 .intro-container {
   display: flex;
   flex-wrap: wrap;
@@ -10,48 +7,33 @@
   margin: 120px auto 0;
   padding: 0 20px;
 }
-
 .intro-text {
   color: var(--color-2);
   font-family: 'Font4';
   flex: 1;
   min-width: 300px;
 }
-
 .intro-text app-typing-effect {
   max-width: 500px;
   font-size: 1.225rem;
   color: var(--color-7);
 }
-
 .intro-text p {
   margin-top: 15px;
   max-width: 550px;
   font-size: 1rem;
 }
-
-/* ========== Buttons ========== */
-.download-btn span{
-  display: inline-flex;
-  align-items: center;
-  padding: 0 10px;
-  font-size: 1rem;
-}
-
+.download-btn span,
 .btn-projects span {
   display: inline-flex;
   align-items: center;
   padding: 0 10px;
   font-size: 1rem;
 }
-
-/* ========== Profile Image ========== */
 .profile-image {
   max-width: 100%;
   height: auto;
 }
-
-/* ========== Social Links ========== */
 .social-links {
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +41,6 @@
   gap: 16px;
   margin-top: 20px;
 }
-
 .social-cards {
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +49,6 @@
   padding: 25px;
   gap: 20px;
 }
-
 .social-link {
   width: 52px;
   height: 52px;
@@ -80,24 +60,19 @@
   overflow: hidden;
   transition: background-color 0.3s, transform 0.3s;
 }
-
 .social-link:hover {
   transform: scale(1.05);
 }
-
 .social-link:active {
   transform: scale(0.9);
 }
-
 .social-icon {
   font-size: 20px;
   color: #fff;
 }
-
 .social-icon path {
   fill: #fff;
 }
-
 @keyframes slide-in-top {
   0% {
     transform: translateY(-50px);
@@ -108,41 +83,33 @@
     opacity: 1;
   }
 }
-
 .social-link:hover .social-icon {
   animation: slide-in-top 0.3s both;
 }
-
 .social-link.instagram:hover { background-color: #E1306C; }
 .social-link.whatsapp:hover  { background-color: #25D366; }
 .social-link.github:hover    { background-color: #333333; }
 .social-link.linkedin:hover  { background-color: #0077B5; }
-
-/* ========== Serviços ========== */
 .services-background {
   background-color: var(--color-1);
   padding: 60px 20px;
   margin-top: 90px;
 }
-
 .services-principal {
   max-width: 1150px;
   margin: 0 auto;
 }
-
 .services-title-area {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
-
 .services-title-area h1 {
   position: relative;
   margin-bottom: 30px;
   flex: 1;
 }
-
 .services-title-area h1::after {
   content: '';
   position: absolute;
@@ -153,19 +120,16 @@
   background-color: var(--color-4);
   border-radius: 20px;
 }
-
 .services-background h1 {
   color: var(--color-7);
   font-size: 2rem;
 }
-
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
   margin-top: 40px;
 }
-
 .service-card {
   background-color: var(--color-1);
   border: 1px solid var(--color-1);
@@ -174,50 +138,41 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-
 .service-card:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
 }
-
 .service-card h1 {
   font-size: 1.5rem;
   color: var(--color-7);
   margin: 15px 0 10px;
 }
-
 .service-description {
   font-size: 1rem;
   color: var(--color-2);
 }
-
 .service-icon {
   width: 60px;
   height: 60px;
   margin: 10px 0;
 }
-
-/* ========== Estatísticas ========== */
 .stats-background {
   max-width: 980px;
   margin: 0 auto;
   padding: 60px 20px 0;
   text-align: center;
 }
-
 .stats-background h1 {
   color: var(--color-7);
   margin-bottom: 30px;
   font-size: 2rem;
 }
-
 .stats-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 30px;
 }
-
 .stats-container p {
   display: flex;
   flex-direction: column;
@@ -225,15 +180,11 @@
   color: var(--color-2);
   min-width: 100px;
 }
-
 .stats-number {
   font-size: 3.5rem;
   font-family: Font3;
   color: var(--color-7);
 }
-
-/* ========== Responsividade ========== */
-/* Tablet (768px–1024px) */
 @media (max-width: 1024px) and (min-width: 768px) {
   .intro-container {
     flex-direction: column-reverse;
@@ -241,89 +192,24 @@
     margin-top: 40px;
     max-width: 800px;
   }
-
-  .profile-image {
-    max-width: 300px;
-    margin-top: 20px;
-  }
-
-  .intro-text h1 {
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
-  }
-
-  .intro-text p {
-    font-size: 1.125rem;
-    max-width: 600px;
-  }
-
-  .download-btn {
-    height: 45px;
-    font-size: 1rem;
-  }
-
-  .services-background {
-    padding: 50px 20px;
-    margin-top: 70px;
-  }
-
-  .services-principal {
-    max-width: 950px;
-  }
-
-  .services-title-area {
-    gap: 15px;
-  }
-
-  .services-background h1 {
-    font-size: 2rem;
-  }
-
-  .services-container {
-    gap: 30px;
-  }
-
-  .service-card {
-    padding: 15px;
-  }
-
-  .service-card h1 {
-    font-size: 1.25rem;
-  }
-
-  .service-description {
-    font-size: 1rem;
-  }
-
-  .service-icon {
-    width: 50px;
-    height: 50px;
-    margin: 10px 0;
-  }
-
-  .stats-background {
-    padding: 50px 20px;
-  }
-
-  .stats-background h1 {
-    font-size: 2.25rem;
-  }
-
-  .stats-container p {
-    font-size: 1.125rem;
-    text-align: center;
-  }
-
-  .stats-number {
-    font-size: 3rem;
-  }
-
-  .social-cards {
-    padding: 30px 0;
-    max-width: 300px;
-  }
+  .profile-image { max-width: 300px; margin-top: 20px; }
+  .intro-text h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); }
+  .intro-text p { font-size: 1.125rem; max-width: 600px; }
+  .download-btn { height: 45px; font-size: 1rem; }
+  .services-background { padding: 50px 20px; margin-top: 70px; }
+  .services-principal { max-width: 950px; }
+  .services-title-area { gap: 15px; }
+  .services-container { gap: 30px; }
+  .service-card { padding: 15px; }
+  .service-card h1 { font-size: 1.25rem; }
+  .service-description { font-size: 1rem; }
+  .service-icon { width: 50px; height: 50px; }
+  .stats-background { padding: 50px 20px; }
+  .stats-background h1 { font-size: 2.25rem; }
+  .stats-container p { font-size: 1.125rem; text-align: center; }
+  .stats-number { font-size: 3rem; }
+  .social-cards { padding: 30px 0; max-width: 300px; }
 }
-
-/* Mobile (below 768px) */
 @media (max-width: 768px) {
   .intro-container {
     flex-direction: column-reverse;
@@ -331,40 +217,11 @@
     justify-content: center;
     max-width: 350px;
   }
-
-  .profile-image {
-    max-width: 250px;
-  }
-
-  .download-btn {
-    order: 3;
-  }
-
-  .stats-number {
-    font-size: 2.5rem;
-  }
-
-  .stats-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .services-background h1 {
-    font-size: 1.5rem;
-  }
-
-  .services-container {
-    gap: 30px;
-    grid-template-columns: 1fr;
-  }
-
-  .social-cards {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 550px) {
-  .social-cards {
-    flex-wrap: wrap;
-  }
+  .profile-image { max-width: 250px; }
+  .download-btn { order: 3; }
+  .stats-number { font-size: 2.5rem; }
+  .stats-container { flex-direction: column; align-items: center; }
+  .services-background h1 { font-size: 1.5rem; }
+  .services-container { gap: 30px; grid-template-columns: 1fr; }
+  .social-cards { flex-wrap: wrap; }
 }
